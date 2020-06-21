@@ -1,0 +1,94 @@
+.chartTime {
+  margin: 0 auto !important;
+  width: 500px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    width: 100% !important;
+    height: 100% !important;
+    .recharts-wrapper,
+    svg {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  .timer {
+    position: absolute;
+    top: 125px;
+    text-align: center;
+    width: 100%;
+    @media (max-width: 768px) {
+      top: 130px;
+    }
+    @media (max-width: 500px) {
+      top: 80px;
+    }
+
+    div {
+      display: inline-block;
+      font: 2.5em/50px 'RTA';
+      color: #000;
+      width: 65px;
+      position: relative;
+      padding: 0 10px;
+      @media (max-width: 768px) {
+        font: 2em/20px 'RTA';
+        width: 65px;
+      }
+      @media (max-width: 500px) {
+        font: 1.4em/20px 'RTA';
+        width: 50px;
+      }
+      &:after {
+        content: ' : ';
+        position: absolute;
+        right: -4px;
+        top: 0;
+      }
+
+      &:last-child {
+        padding: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      span {
+        display: block;
+        font: 14px/21px 'RTA-Light' !important;
+        color: #7d7d7d;
+        @media (max-width: 768px) {
+          font-size: 11px !important;
+        }
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    color: #7d7d7d;
+    font: 0.9em/21px 'RTA';
+    width: 100%;
+    @media (max-width: 768px) {
+      bottom: 15px;
+    }
+  }
+}
+
+html[dir='rtl'] {
+  .chartTime {
+    .timer {
+      div {
+        &:after {
+          right: auto;
+          left: -4px;
+        }
+      }
+    }
+  }
+}

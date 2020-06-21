@@ -1,0 +1,57 @@
+.hurryUpCart {
+  height: 50px;
+  position: absolute;
+  right: 45px;
+  top: 30px;
+  z-index: 99999;
+  @media (max-width: 768px) {
+    position: inherit;
+  }
+
+  div {
+    max-width: 1050px;
+    width: 250px;
+    margin: 0 auto;
+    font: 1em/21px 'RTA';
+    color: #54575b;
+    padding-top: 17px;
+    position: relative;
+    text-align: right;
+    // padding-left: 40px;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    span {
+      color: #ee0006;
+      font: 1.8em/40px 'RTA';
+      display: block;
+      padding: 0 5px;
+      text-align: right;
+    }
+
+    // &:before {
+    //   content: '';
+    //   background: url('../../../../content/images/icons/hurryUpCart_icon.svg') no-repeat;
+    //   position: absolute;
+    //   top: 16px;
+    //   left: 0;
+    //   width: 25px;
+    //   height: 21px;
+    //   display: inline-block;
+    // }
+  }
+}
+
+html[dir='rtl'] {
+  .hurryUpCart {
+    right: auto;
+    left: 45px;
+    div {
+      text-align: left;
+      span {
+        text-align: left;
+      }
+    }
+  }
+}

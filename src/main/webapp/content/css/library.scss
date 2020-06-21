@@ -1,0 +1,60 @@
+.MuiSlider-thumb {
+  top: 9px;
+  border: 2px solid $color_15 !important;
+  width: 19px !important;
+  height: 19px !important;
+  background: #fff !important;
+}
+
+.MuiSlider-root {
+  color: $color_15 !important;
+  width: 95% !important;
+
+  .MuiSlider-rail,
+  .MuiSlider-track {
+    height: 3px !important;
+  }
+
+  .MuiSlider-mark {
+    height: 3px;
+    width: 1px;
+  }
+}
+
+.p-inputswitch {
+  width: 60px !important;
+  height: 30px !important;
+}
+
+.p-inputswitch {
+  .p-inputswitch-slider {
+    &:before {
+      background-color: #ffffff;
+      height: 28px !important;
+      width: 30px !important;
+      left: 2px !important;
+      bottom: 1px !important;
+      border-radius: 50%;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+    }
+  }
+}
+
+.p-inputswitch.p-inputswitch-checked {
+  .p-inputswitch-slider {
+    &:before {
+      -webkit-transform: translateX(2em) !important;
+      -ms-transform: translateX(2em) !important;
+      transform: translateX(2em) !important;
+    }
+  }
+}
+
+.p-inputswitch .p-inputswitch-slider {
+  background: #d6d6d6 !important;
+}
+
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background-color: $color_16 !important;
+}

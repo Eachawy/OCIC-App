@@ -1,0 +1,63 @@
+.termsConditions {
+  border: 1px solid #e6e6e6 !important;
+  padding: 15px 20px !important;
+
+  @media (max-width: 750px) {
+    margin: 0 !important;
+  }
+
+  > div {
+    display: block;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+
+    p {
+      align-items: center;
+      justify-content: left;
+      font: 0.9em/28px 'RTA';
+      color: #727272;
+      @media (max-width: 768px) {
+        line-height: 20px;
+      }
+      > span {
+        color: #3038af;
+        text-decoration: underline;
+        padding: 0 3px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 1px;
+      }
+    }
+    &:nth-child(2) {
+      justify-content: flex-end;
+      align-items: center;
+      display: inline-flex;
+    }
+  }
+
+  .termsConditionsDoc {
+    display: none;
+    padding-top: 20px;
+
+    p {
+      text-align: justify;
+      font: 0.9em/22px 'RTA';
+      color: #53565a;
+      margin-bottom: 20px;
+    }
+
+    h6 {
+      font: 1.1em/22px 'RTA-bold';
+      color: #1b0e92;
+      margin-bottom: 20px;
+    }
+  }
+
+  h4 {
+    display: block;
+    font: 1.1em/28px 'RTA';
+    color: #000;
+  }
+}

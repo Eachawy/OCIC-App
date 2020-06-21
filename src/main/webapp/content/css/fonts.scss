@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'RTA-Light';
+  src: url('../content/fonts/RTA-Light.eot');
+  src: url('../content/fonts/RTA-Light.eot?#iefix') format('embedded-opentype'), url('../content/fonts/RTA-Light.woff') format('woff'),
+    url('../content/fonts/RTA-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RTA-Black';
+  src: url('../content/fonts/RTA-Black.eot');
+  src: url('../content/fonts/RTA-Black.eot?#iefix') format('embedded-opentype'), url('../content/fonts/RTA-Black.woff') format('woff'),
+    url('../content/fonts/RTA-Black.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RTA-bold';
+  src: url('../content/fonts/rta-bold.eot');
+  src: url('../content/fonts/rta-bold.eot?#iefix') format('embedded-opentype'), url('../content/fonts/rta-bold.woff') format('woff'),
+    url('../content/fonts/rta-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RTA';
+  src: url('../content/fonts/rta-regular.eot');
+  src: url('../content/fonts/rta-regular.eot?#iefix') format('embedded-opentype'), url('../content/fonts/rta-regular.woff') format('woff'),
+    url('../content/fonts/rta-regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}

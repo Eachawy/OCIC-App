@@ -1,0 +1,146 @@
+@import '../../../../content/css/variables/bgAndColor.scss';
+
+.wizardSteps {
+  > div {
+    float: left;
+    width: 20%;
+    text-align: center;
+    position: relative;
+
+    @media (max-width: 768px) {
+      width: 33%;
+    }
+
+    .numb {
+      width: 41px;
+      height: 41px;
+      border-radius: 50%;
+      border: 3px solid $color_23;
+      display: inline-block;
+      font: 1em/38px 'RTA-bold';
+      text-align: center;
+      margin-bottom: 20px;
+      background: $color_19;
+      color: $color_8;
+
+      &:before {
+        content: '';
+        height: 4px;
+        background: $color_23;
+        position: absolute;
+        width: 81%;
+        top: 20px;
+        right: -40%;
+        z-index: -1;
+      }
+
+      &:after {
+        content: '';
+        height: 4px;
+        background: $color_23;
+        position: absolute;
+        width: 41%;
+        top: 20px;
+        right: -40%;
+        z-index: -1;
+      }
+
+      &.h {
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    > div {
+      display: block;
+
+      span {
+        display: block;
+        font: 0.9em/18px 'RTA-Light';
+      }
+    }
+
+    &:last-child {
+      .numb:before,
+      .numb:after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .active {
+    .numb {
+      border: 3px solid $color_2;
+      background: $color_2;
+      color: $color_19;
+
+      &:before {
+        background: $color_2;
+      }
+    }
+
+    > div {
+      span {
+        color: $color_2;
+        font: 0.9em/18px 'RTA-bold';
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+
+      & + div {
+        display: block;
+        .numb {
+          &:after,
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .success {
+    .numb {
+      border: 3px solid $color_7;
+      font-size: 0;
+      background: url('../../../../content/images/icons/success_icon.svg') no-repeat $color_7 center;
+
+      &:before,
+      &:after {
+        background: $color_7;
+      }
+    }
+
+    > div {
+      span {
+        // color: #43bd68;
+      }
+    }
+  }
+}
+
+html[dir='rtl'] {
+  .wizardSteps {
+    > div {
+      .numb {
+        &:before {
+          right: auto;
+          left: -40%;
+        }
+
+        &:after {
+          left: -40%;
+          right: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import './reset.scss';
+@import './slick.scss';
+@import './mixins/mixins.scss';
+@import './variables/vehicels.scss';
+@import './variables/bgAndColor.scss';
+@import './variables/flags.scss';
+@import './library.scss';
+
+body {
+  @include scrollbars(5px, $color_10, $color_3);
+}
+
+.mapContainer{
+  position: relative;
+
+  .popup{
+    position: absolute;
+    width: 500px;
+    left: calc(70% - 500px);
+    top: 20%;
+    background: #fff;
+    z-index: 9999;
+    padding: 30px;
+    display: none;
+  }
+
+  .form{
+    label {
+      display: block;
+    }
+    input, textarea{
+      width: 100%;
+      display: block;
+    }
+    textarea{
+      height: 150px;
+    }
+    .row {
+      margin: 0 0 20px 0;
+    }
+    .footerBtn{
+      button{
+        padding: 10px 50px;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+@import './ocic_ar.scss';

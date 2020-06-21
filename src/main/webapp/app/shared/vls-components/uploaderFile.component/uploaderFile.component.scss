@@ -1,0 +1,96 @@
+@import '../../../../content/css/mixins/scroll.scss';
+@import '../../../../content/css/variables/bgAndColor.scss';
+
+.DropzoneArea-dropZone-2 {
+  background: #fff !important;
+  border: 1px solid $color_11 !important;
+  min-height: 150px !important;
+  margin: 30px 0 !important;
+
+  .DropzoneArea-dropzoneTextStyle-5,
+  .MuiGrid-root {
+    float: right;
+  }
+
+  .DropzoneArea-dropzoneTextStyle-5 {
+    width: 28%;
+    background: url('../../../../content/images/icons/upload_icon.svg') no-repeat center top;
+    margin-top: 25px;
+    padding-top: 50px;
+    position: relative;
+    margin-left: 2%;
+
+    p {
+      font: 0.9em/21px 'RTA';
+      color: #b0b5b8;
+    }
+
+    svg {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      background: $color_11;
+      width: 1px;
+      height: 118px;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+    }
+
+    + .MuiGrid-root {
+      width: 70%;
+      height: 150px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      @include scrollbars(5px, $color_10, $color_3);
+
+      .MuiGrid-item {
+        padding: 10px !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          box-shadow: none;
+        }
+
+        button {
+          box-shadow: none;
+          background: #fff;
+          top: 0;
+          left: 0;
+          width: 34px;
+          height: 25px;
+          color: $color_1;
+        }
+      }
+    }
+  }
+}
+
+html[dir='rtl'] {
+  .DropzoneArea-dropZone-2 {
+    .DropzoneArea-dropzoneTextStyle-5,
+    .MuiGrid-root {
+      float: left;
+    }
+
+    .DropzoneArea-dropzoneTextStyle-5 {
+      margin-left: 0;
+      margin-right: 2%;
+      &:before {
+        left: auto;
+        right: -10px;
+      }
+      + .MuiGrid-root {
+        .MuiGrid-item {
+          button {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "ocic",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for VlsPortalFrontend",
+  "description": "Description for OCIC",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

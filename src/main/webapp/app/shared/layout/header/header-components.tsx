@@ -10,7 +10,7 @@ import appConfig from 'app/config/constants';
 export const Brand = props => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
     <span className="brand-title">
-      <Translate contentKey="global.title">VlsPortalFrontend</Translate>
+      <Translate contentKey="global.title">OCIC Application</Translate>
     </span>
     <span className="navbar-version">{appConfig.VERSION}</span>
   </NavbarBrand>

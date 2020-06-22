@@ -28,13 +28,14 @@ const MapComponent = () => {
         height: "100vh"
     }
     const center = {
-        lat: 25.064453,
-        lng: 55.178806
+        lat: 27.137368,
+        lng: 30.663226
     }
     const options = {
-        styles: mapStyles,
-        disableDefaultUI: true,
-        zoomControl: true
+        // styles: mapStyles,
+        disableDefaultUI: false,
+        zoomControl: true,
+        zoom: 6
     }
 
     const onMapClick = React.useCallback(event => {
@@ -109,9 +110,8 @@ const MapComponent = () => {
                     <GoogleMap
                         mapContainerStyle={mapContainerStyle}
                         onLoad={onMapLoad}
-                        zoom={8}
                         center={center}
-                        options={{ options }}
+                        options={options}
                         onClick={onMapClick}
                     >
                         {markers.map((marker, i) => <Marker
@@ -140,7 +140,8 @@ const MapComponent = () => {
 
                         {selectd ? (<InfoWindow
                             position={{ lat: selectd.lat, lng: selectd.lng }}
-                            onCloseClick={() => setSelected(null)}>
+                            onCloseClick={() => setSelected(null)}
+                            options={{ disableAutoPan: true }}>
                             <div>
                                 <h2>
                                     {selectd.name}

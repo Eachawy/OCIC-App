@@ -12,13 +12,13 @@ import {
 } from '@react-google-maps/api';
 
 import mapStyles from './mapStyle';
+import { useForm } from "react-hook-form";
+
 
 const MapComponent = () => {
 
     const [markers, setMarkers] = React.useState([]);
     const [selectd, setSelected] = React.useState(null);
-    const [placeName, setPlaceName] = React.useState('');
-    const [placeDes, setPlaceDes] = React.useState('');
     const [createMarker, setCreateMarker] = React.useState([]);
 
 
@@ -43,15 +43,14 @@ const MapComponent = () => {
         setCreateMarker(event);
     }, []);
 
-
-    const onSaveMarkerData = e => {
+    const onSaveMarkerData = (e, d) => {
         setMarkers(current => [
             ...current, {
                 lat: e.latLng.lat(),
                 lng: e.latLng.lng(),
                 time: new Date().getTime(),
-                name: placeName,
-                des: placeDes
+                name: d.placeName,
+                des: d.placeDescription
             }
         ]);
         $('.popup').fadeOut();
@@ -60,6 +59,8 @@ const MapComponent = () => {
     const mapRef = React.useRef();
     const onMapLoad = React.useCallback(map => {
         mapRef.current = map;
+        /* eslint-disable no-console */
+        console.log(map);
     }, []);
 
 
@@ -77,30 +78,52 @@ const MapComponent = () => {
         console.log(markers);
     }
 
+    // on marker clicked
+    const onMarkerClicked = m => {
+        setSelected(m);
+        /* eslint-disable no-console */
+        console.log(m);
+    }
+
+    //------- Start Form 
+    const { register, handleSubmit, errors, reset } = useForm();
+    const onSubmit = handleSubmit((data, e) => {
+        /* eslint-disable no-console */
+        console.log(JSON.stringify(data));
+        onSaveMarkerData(createMarker, data);
+        e.target.reset();
+    });
+    const onReset = () =>{
+        $('.popup').fadeOut();
+        reset();
+    }
+    //------- End Form 
+
     return (
         <>
             <div className="mapContainer">
                 <div className="popup">
-                    <form className="form">
+                    <form className="form" onSubmit={onSubmit}>
                         <div className="row">
                             <label>Place Name</label>
                             <input
-                                name="place name"
-                                value={placeName}
-                                onChange={e => setPlaceName(e.target.value)}
+                                name="placeName"
+                                placeholder="place name"
+                                ref={register({ required: true})}
                             />
+                            {errors.placeName && errors.placeName.ref.value === '' && <p>Is required</p>}
                         </div>
                         <div className="row">
                             <label>Place Description</label>
                             <textarea
-                                name="place Description"
-                                value={placeDes}
-                                onChange={e => setPlaceDes(e.target.value)}
+                                name="placeDescription"
+                                placeholder="place Description"
+                                ref={register}
                             />
                         </div>
                         <div className="footerBtn">
-                            <button type="button" onClick={() => onSaveMarkerData(createMarker)}>Save</button>
-                            <button type="button" onClick={() => $('.popup').fadeOut()}>Cancel</button>
+                            <button type="submit">Save</button>
+                            <button type="reset" onClick={onReset}>Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -127,9 +150,7 @@ const MapComponent = () => {
                                 anchor: new window.google.maps.Point(15, 15)
                             }}
                             onClick={() => {
-                                setSelected(marker);
-                                /* eslint-disable no-console */
-                                console.log(marker);
+                                onMarkerClicked(marker);
                             }}
 
                             draggable={true}

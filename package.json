@@ -33,6 +33,7 @@
     "primereact": "^4.2.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
+    "react-hook-form": "^5.7.2",
     "react-hot-loader": "4.12.18",
     "react-input-mask": "^3.0.0-alpha.2",
     "react-jhipster": "0.10.0",
